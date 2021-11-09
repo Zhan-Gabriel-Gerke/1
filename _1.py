@@ -1,4 +1,6 @@
 print("Камень ножницы бумага ")
+from keyboard import *
+from module1 import *
 from random import *
 if 1==int(input("Хотите ли вы поиграть 0 or 1")):
     g=int(input("Вы хотите поиграть с роботом или с другом  или чтобы робот с роботом 1 or 2 or 3"))
@@ -65,21 +67,12 @@ if 1==int(input("Хотите ли вы поиграть 0 or 1")):
                 print("победил игрок номер 2")
                 lose+=1
     elif g==3:
-        from keyboard import *
         v1=['Камень','Ножницы','Бумага'] 
         v2=['Камень','Ножницы','Бумага'] 
-        while True: 
-            print('Играем? esc= выходим, enter= играем') 
-            if read_key()=='esc': 
-                break 
-            elif read_key()=='enter': 
-                p1=choice(v1) 
-                print('Первый Бот: ',p1) 
-                p2=choice(v2) 
-                print('Второй Бот: ',p2) 
-                if p1==p2: 
-                    print('Ничья') 
-                elif p1==v1[0] and p2==v2[1] or p1==v1[2] and p2==v2[0] or p1==v1[1] and p2==v2[2]: 
-                    print('Выйграл 1') 
-                else: 
-                    xˇxprint("Выйграл 2")
+        
+        m=start()
+        if m==1:
+            bot_vs_bot(v1,v2)
+        elif m==2:
+            while 1:
+                pass
